@@ -12,7 +12,7 @@
       <div class="col-md-4 mb-3">
         <%= link_to list_path(list), class: "card-link text-decoration-none" do %>
           <div class="card bg-dark text-white text-center">
-            <div class="card-img-top" style="background-image: url('<%= list.image_url %>'); height: 200px; background-size: cover; position: relative;">
+            <div class="card-img-top" style="background-image: url('<%= cl_image_path(list.photo.key, width: 400, height: 300, crop: :fill) %>'); height: 200px; background-size: cover; position: relative;">
               <div class="card-img-overlay d-flex align-items-center justify-content-center" style="background: rgba(0, 0, 0, 0.4);">
                 <h5 class="card-title text-center"><%= list.name %></h5>
               </div>
