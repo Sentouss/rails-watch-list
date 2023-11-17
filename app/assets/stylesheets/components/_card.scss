@@ -1,0 +1,30 @@
+.card-link {
+  text-decoration: none; /* Removes text underline */
+}
+
+.card-title {
+  margin: 0; /* Keeps any default margin removed */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the title */
+  z-index: 1; /* Ensures the title is above the image */
+  font-weight: bold; /* Makes the font weight bolder */
+  /* or you can use a numeric value like 600, 700, etc., depending on the font's available weights */
+}
+
+.card-body {
+  height: 400px; /* Adjust the height as needed */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-footer {
+  flex-shrink: 0;
+}
