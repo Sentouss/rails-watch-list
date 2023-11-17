@@ -1,12 +1,17 @@
 <div class="container mt-4">
   <h1>Add a new List</h1>
-  <%= simple_form_for(@list, html: { class: 'form-horizontal' }) do |f| %>
+  <%= simple_form_for(@list, html: { class: 'form-horizontal', multipart: true }) do |f| %>
     <div class="form-group">
       <%= f.input :name, input_html: { class: 'form-control' }, wrapper: false, label_html: { class: 'form-label' } %>
     </div>
+    <br>
     <div class="form-group">
       <%= f.input :photo, as: :file, input_html: { class: 'form-control-file' } %>
+      <small class="form-text text-muted">
+        Accepted formats: PNG, JPG, JPEG. Max size: 5MB.
+      </small>
     </div>
+    <br>
     <br>
     <div class="form-group">
       <%= f.button :submit, "Add List", class: "btn btn-primary" %>
