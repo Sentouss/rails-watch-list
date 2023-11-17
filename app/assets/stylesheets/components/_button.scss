@@ -18,3 +18,34 @@
   border: none; /* Removes the border */
   text-decoration: none;
 }
+
+.review {
+  margin-bottom: 15px;
+}
+
+.review hr {
+  border-top: 1px solid #ccc;
+}
+
+.stars {
+  color: #aaa; /* Default star color */
+}
+
+.star-rating {
+  direction: rtl; /* Right-to-left direction */
+}
+
+.star-rating-star {
+  font-size: 30px;
+  color: #aaa; /* Default color */
+  cursor: pointer;
+  direction: ltr; /* Left-to-right for the stars themselves */
+}
+
+.star-rating-input:checked ~ .star-rating-star {
+  color: #ffc107; /* Gold color for selected and preceding stars */
+}
+
+.star-rating-input {
+  display: none; /* Hide the radio buttons */
+}

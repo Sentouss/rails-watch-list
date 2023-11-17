@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :lists, only: [:index, :show, :new, :create] do
     resources :bookmarks, only: [:create]
   end
+  resources :lists do
+    resources :reviews, only: [:create]
+  end
   resources :bookmarks, only: [:destroy]
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

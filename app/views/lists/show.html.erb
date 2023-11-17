@@ -34,6 +34,8 @@
   </div>
   <br>
 
+  <hr class="section-divider"> <!-- Grey line after movies section -->
+
     <!-- Bookmark form -->
   <h1>Add a movie in <%= @list.name %> list</h1>
   <%= simple_form_for([@list, @bookmark]) do |f| %>
@@ -45,6 +47,43 @@
     </div>
     <%= f.button :submit, "Add Movie", class: "btn btn-primary" %>
   <% end %>
+  <br>
+  <br>
+
+  <hr class="section-divider"> <!-- Grey line after movies section -->
+
+    <!-- Review Section -->
+  <div class="row">
+    <!-- Reviews Section (Half Left) -->
+    <div class="col-md-6">
+      <h3>Reviews</h3>
+      <% @list.reviews.each do |review| %>
+        <div class="review">
+          <div class="stars">
+            <% 5.times do |i| %>
+              <i class="fas fa-star <%= 'text-warning' if i < review.rating %>"></i>
+            <% end %>
+          </div>
+          <p><%= review.content %></p>
+          <hr>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Review form (Half Right) -->
+    <div class="col-md-6">
+      <%= simple_form_for([@list, @review]) do |f| %>
+        <%= f.input :content %>
+        <div class="star-rating">
+          <% 5.times do |i| %>
+            <%= radio_button_tag 'review[rating]', i+1, false, id: "rating_#{i+1}", class: 'star-rating-input' %>
+            <%= label_tag "rating_#{i+1}", '★', class: 'star-rating-star' %>
+          <% end %>
+        </div>
+        <%= f.button :submit, "Post Review", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
   <br>
   <br>
 </div>
