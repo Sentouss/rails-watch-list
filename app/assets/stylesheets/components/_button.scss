@@ -11,3 +11,10 @@
 .btn-ghost:hover {
   opacity: 1;
 }
+
+.btn-delete-custom {
+  background-color: transparent; /* Removes the background color */
+  color: red; /* Sets the text color to red */
+  border: none; /* Removes the border */
+  text-decoration: none;
+}
