@@ -61,7 +61,11 @@
         <div class="review">
           <div class="stars">
             <% 5.times do |i| %>
-              <i class="fas fa-star <%= 'text-warning' if i < review.rating %>"></i>
+              <% if i < review.rating %>
+                <i class="fas fa-star text-warning"></i> <!-- Filled star -->
+              <% else %>
+                <i class="fas fa-star"></i> <!-- Unfilled star -->
+              <% end %>
             <% end %>
           </div>
           <p><%= review.content %></p>
